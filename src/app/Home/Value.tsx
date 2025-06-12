@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import value1 from "../../assets/Value1.png";
-import value2 from "../../assets/Value2.png";
-import value3 from "../../assets/Value3.png";
-import value4 from "../../assets/Value4.png";
-import value5 from "../../assets/Value5.png";
+import value1 from "../../assets/value1.png";
+import value2 from "../../assets/value2.png";
+import value3 from "../../assets/value3.png";
+import value4 from "../../assets/value4.png";
+import value5 from "../../assets/value5.png";
 import hexagon from "../../assets/hexgon.png";
 import Image from "next/image";
 
