@@ -34,7 +34,6 @@ export default function GetInTouch() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Add your form handling logic here (API call, validation, etc.)
   };
 
   return (
@@ -44,7 +43,6 @@ export default function GetInTouch() {
         background: "linear-gradient(135deg, #020202 0%, #2A0A4E 100%)",
       }}
     >
-      {/* Hexagon background */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
         <Image
           src={hexagon}
@@ -54,7 +52,6 @@ export default function GetInTouch() {
       </div>
 
       <div className="relative z-10 flex min-h-screen">
-        {/* Left Section */}
         <div className="flex-1 flex flex-col justify-center pl-16 pr-8">
           <div className="max-w-md">
             <h2 className="text-4xl font-light text-white mb-2">
@@ -64,9 +61,8 @@ export default function GetInTouch() {
               HYPERMINDS TECH
             </h1>
             <p className="text-lg text-white/80 italic mb-12 font-light">
-              Let's Innovate together
+              Let&#39;s Innovate together
             </p>
-
             <div className="mb-8">
               <p className="text-white mb-4 text-sm">Connect quickly with :</p>
               <div className="flex space-x-4">
@@ -84,7 +80,6 @@ export default function GetInTouch() {
           </div>
         </div>
 
-        {/* Right Section - Contact Form */}
         <div className="flex items-center justify-center pr-16 pl-8">
           <div className="bg-white rounded-3xl p-8 w-full max-w-md shadow-2xl">
             <div className="mb-6">
@@ -93,7 +88,7 @@ export default function GetInTouch() {
                 <span className="font-bold">bring the Expertise</span>.
               </h3>
               <p className="text-sm text-gray-600">
-                Tell us more about yourself and what you've got in mind.
+                Tell us more about yourself and what you have got in mind.
               </p>
             </div>
 
