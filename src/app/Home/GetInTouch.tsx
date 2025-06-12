@@ -1,20 +1,29 @@
 "use client";
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import Gmail from "../../assets/Gmail.png";
 import Whatsapp from "../../assets/Whatsapp.png";
 import Linkdin from "../../assets/Linkdin.png";
 import hexagon from "../../assets/hexgon.png";
 
+interface FormData {
+  fullName: string;
+  phoneNo: string;
+  emailId: string;
+  vision: string;
+}
+
 export default function GetInTouch() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: "",
     phoneNo: "",
     emailId: "",
     vision: "",
   });
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -22,10 +31,10 @@ export default function GetInTouch() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission logic here
+    // Add your form handling logic here (API call, validation, etc.)
   };
 
   return (
@@ -39,7 +48,7 @@ export default function GetInTouch() {
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
         <Image
           src={hexagon}
-          alt="background"
+          alt="Hexagon background"
           className="w-auto h-full opacity-100"
         />
       </div>
@@ -89,49 +98,41 @@ export default function GetInTouch() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Your full name"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
-                  className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                />
-              </div>
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Your full name"
+                value={formData.fullName}
+                onChange={handleInputChange}
+                className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+              />
 
-              <div>
-                <input
-                  type="tel"
-                  name="phoneNo"
-                  placeholder="Phone No"
-                  value={formData.phoneNo}
-                  onChange={handleInputChange}
-                  className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                />
-              </div>
+              <input
+                type="tel"
+                name="phoneNo"
+                placeholder="Phone No"
+                value={formData.phoneNo}
+                onChange={handleInputChange}
+                className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+              />
 
-              <div>
-                <input
-                  type="email"
-                  name="emailId"
-                  placeholder="Email-ID"
-                  value={formData.emailId}
-                  onChange={handleInputChange}
-                  className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                />
-              </div>
+              <input
+                type="email"
+                name="emailId"
+                placeholder="Email-ID"
+                value={formData.emailId}
+                onChange={handleInputChange}
+                className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+              />
 
-              <div>
-                <textarea
-                  name="vision"
-                  placeholder="Tell us little about your vision ...."
-                  value={formData.vision}
-                  onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors resize-none"
-                />
-              </div>
+              <textarea
+                name="vision"
+                placeholder="Tell us little about your vision ...."
+                value={formData.vision}
+                onChange={handleInputChange}
+                rows={4}
+                className="w-full px-0 py-3 border-0 border-b border-gray-200 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors resize-none"
+              />
 
               <div className="pt-6">
                 <button
