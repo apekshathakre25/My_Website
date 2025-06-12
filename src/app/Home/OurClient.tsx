@@ -1,12 +1,17 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import mytra from "../../assets/Mytra.jpg";
 import JandJ from "../../assets/JandJ.png";
 import SWR from "../../assets/SWR.png";
 import Ornate from "../../assets/Ornate.png";
 
-const clients = [
+type Client = {
+  name: string;
+  logo: StaticImageData | null;
+};
+
+const clients: Client[] = [
   {
     name: "MYTRA",
     logo: mytra,
@@ -48,8 +53,8 @@ export default function OurClient() {
 
         {/* Client Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
-          {clients.map((client, index) => (
-            <div key={index} className="group perspective-1000 h-48">
+          {clients.map((client) => (
+            <div key={client.name} className="group perspective-1000 h-48">
               <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
                 {/* Front Face */}
                 <div className="absolute inset-0 w-full h-full backface-hidden bg-white rounded-2xl border-2 border-purple-200 shadow-lg flex items-center justify-center p-6 hover:shadow-xl transition-shadow duration-300">
@@ -64,7 +69,9 @@ export default function OurClient() {
                     <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
-                      className="object-cover"
+                      width={100}
+                      height={100}
+                      className="object-contain"
                     />
                   ) : (
                     <div className="text-4xl font-bold text-purple-700">

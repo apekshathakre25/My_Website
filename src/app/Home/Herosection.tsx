@@ -10,16 +10,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-
 const HypermindsHero = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Background: Navbar always on top */}
       <nav className="absolute z-30 w-full px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center">
             <div className="relative w-48 h-12">
               <Image
@@ -31,7 +28,7 @@ const HypermindsHero = () => {
               />
             </div>
           </div>
-          {/* Desktop Navigation */}
+
           <div className="hidden md:flex items-center space-x-8">
             {["What we do", "What we think", "Who we are", "Careers"].map(
               (item, index) => (
@@ -44,7 +41,7 @@ const HypermindsHero = () => {
               )
             )}
           </div>
-          {/* Mobile Menu Button */}
+
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -58,7 +55,7 @@ const HypermindsHero = () => {
             </button>
           </div>
         </div>
-        {/* Mobile Navigation */}
+
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="flex flex-col space-y-4">
@@ -77,7 +74,7 @@ const HypermindsHero = () => {
           </div>
         )}
       </nav>
-      {/* Swiper Slides */}
+
       <Swiper
         modules={[Autoplay]}
         loop={true}
@@ -86,7 +83,6 @@ const HypermindsHero = () => {
         allowTouchMove={false}
         className="h-screen"
       >
-        {/* Slide 1: INNOVATION FIRST. VALUE ALWAYS. (Right-aligned) */}
         <SwiperSlide>
           <div className="absolute inset-0">
             <Image
@@ -101,10 +97,14 @@ const HypermindsHero = () => {
           <div className="relative z-20 flex flex-col items-end justify-center h-full px-4 sm:px-6 lg:px-8">
             <div className="max-w-xl text-right mr-0 ml-auto">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
-                INNOVATION FIRST.<br />VALUE ALWAYS.
+                INNOVATION FIRST.
+                <br />
+                VALUE ALWAYS.
               </h1>
               <p className="text-lg sm:text-xl text-white/80 mb-10 leading-relaxed">
-                Delivering intelligent, cost-effective IT solutions that evolve<br />with your business.
+                Delivering intelligent, cost-effective IT solutions that evolve
+                <br />
+                with your business.
               </p>
               <button className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 hover:from-purple-700 hover:via-purple-800 hover:to-indigo-700 text-white px-7 py-2 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 border border-purple-500/30">
                 Get In Touch
@@ -112,7 +112,7 @@ const HypermindsHero = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* Slide 2: RELIABLE TECH. REAL-WORLD RESULTS. (Left-aligned) */}
+
         <SwiperSlide>
           <div className="absolute inset-0">
             <Image
@@ -127,10 +127,15 @@ const HypermindsHero = () => {
           <div className="relative z-20 flex flex-col items-start justify-center h-full px-4 sm:px-6 lg:px-8">
             <div className="max-w-xl text-left ml-0 mr-auto">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
-                RELIABLE TECH.<br />REAL-WORLD RESULTS.
+                RELIABLE TECH.
+                <br />
+                REAL-WORLD RESULTS.
               </h1>
               <p className="text-lg sm:text-xl text-white/80 mb-10 leading-relaxed">
-                Transforming operations with agile teams, automation-first mindset,<br />and minimal overhead.
+                Transforming operations with agile teams, automation-first
+                mindset,
+                <br />
+                and minimal overhead.
               </p>
               <button className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 hover:from-purple-700 hover:via-purple-800 hover:to-indigo-700 text-white px-7 py-2 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 border border-purple-500/30">
                 Get In Touch
@@ -138,7 +143,7 @@ const HypermindsHero = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* Slide 3: OUT THINK. OUT DO. OUT DELIVER. (Left-aligned) */}
+
         <SwiperSlide>
           <div className="absolute inset-0">
             <Image
@@ -158,7 +163,9 @@ const HypermindsHero = () => {
                 <div>OUT DELIVER .</div>
               </h1>
               <p className="text-lg sm:text-xl text-white/80 mb-10 leading-relaxed max-w-lg">
-                Empowering digital transformation through innovative, scalable,<br />and intelligent technology solutions.
+                Empowering digital transformation through innovative, scalable,
+                <br />
+                and intelligent technology solutions.
               </p>
               <button className="bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 hover:from-purple-700 hover:via-purple-800 hover:to-indigo-700 text-white px-7 py-2 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 border border-purple-500/30">
                 Get In Touch

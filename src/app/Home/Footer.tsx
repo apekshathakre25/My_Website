@@ -7,7 +7,6 @@ export default function Footer() {
     <footer className="bg-white py-16 px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Logo and Description */}
           <div>
             <div className="flex items-center mb-6">
               <Image
@@ -20,7 +19,7 @@ export default function Footer() {
               Empowering digital transformation through innovation and
               excellence.
             </p>
-            {/* Social Media Icons */}
+
             <div className="flex space-x-4">
               <a
                 href="#"
@@ -125,7 +124,7 @@ export default function Footer() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeMiterlimit="10"
-                     strokeWidth="2"
+                      strokeWidth="2"
                       d="M30,11H18c-3.9,0-7,3.1-7,7v12c0,3.9,3.1,7,7,7h12c3.9,0,7-3.1,7-7V18C37,14.1,33.9,11,30,11z"
                     ></path>
                     <circle cx="31" cy="16" r="1" fill="#fff"></circle>
@@ -140,7 +139,7 @@ export default function Footer() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeMiterlimit="10"
-                     strokeWidth="2"
+                      strokeWidth="2"
                     ></circle>
                   </g>
                 </svg>
@@ -166,7 +165,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product Column */}
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-6">Product</h3>
             <ul className="space-y-4">
@@ -205,7 +203,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company Column */}
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-6">Company</h3>
             <ul className="space-y-4">
@@ -244,7 +241,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support Column */}
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-6">Support</h3>
             <ul className="space-y-4">
@@ -291,7 +287,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Us Column */}
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-6">
               Contacts us
@@ -343,7 +338,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom */}
         <div className="border-t border-gray-200 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-500 text-sm">

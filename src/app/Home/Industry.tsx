@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-
 import data_engineering from "../../assets/data_engineering.jpg";
 import cloud_devops from "../../assets/cloud_devops.jpg";
 import e_commerce from "../../assets/e_commerce.png";
@@ -74,7 +73,6 @@ const industryData: IndustryItem[] = [
     image: industryImages.enterpriseSoftware,
     position: { top: "55%", left: "52%" },
   },
- 
 ];
 
 type HexagonShapeProps = {
@@ -99,7 +97,6 @@ const HexagonShape: React.FC<HexagonShapeProps> = ({
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
   >
-    {/* Burning border animation */}
     <div
       className={`absolute inset-0 pointer-events-none transition-all duration-500 ${
         isHovered ? "burning-border" : "border-2 border-[#902FA1]"
@@ -110,7 +107,7 @@ const HexagonShape: React.FC<HexagonShapeProps> = ({
         zIndex: 2,
       }}
     ></div>
-    {/* Image background, only visible on hover */}
+
     <div
       className={`absolute w-full h-full transition-opacity duration-500 ${
         isHovered ? "opacity-100" : "opacity-0"
@@ -131,7 +128,7 @@ const HexagonShape: React.FC<HexagonShapeProps> = ({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent"></div>
     </div>
-    {/* Hexagon content */}
+
     <div
       className={`w-full h-full flex items-center justify-center text-center transition-all duration-500 ${
         isHovered ? "bg-transparent" : "bg-[#250035]"
@@ -148,9 +145,7 @@ const HexagonShape: React.FC<HexagonShapeProps> = ({
           isHovered ? "text-white text-shadow-lg" : "text-purple-100"
         }`}
         style={{
-          textShadow: isHovered
-            ? "0 4px 8px rgba(0,0,0,0.5)"
-            : undefined,
+          textShadow: isHovered ? "0 4px 8px rgba(0,0,0,0.5)" : undefined,
         }}
       >
         {title}
@@ -210,21 +205,6 @@ const Industry: React.FC = () => {
             />
           </div>
         ))}
-
-        {/* <div
-          className="absolute transition-all duration-300"
-          style={{
-            top: "55%",
-            left: "68%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <HexagonShape
-            title="And still counting..."
-            image=""
-            isHovered={false}
-          />
-        </div> */}
       </div>
 
       <style jsx>{`
@@ -234,11 +214,13 @@ const Industry: React.FC = () => {
             border-color: #ffb347;
           }
           40% {
-            box-shadow: 0 0 16px 4px #ffcc33, 0 0 32px 8px #ffb347, 0 0 0 0 #fff0;
+            box-shadow: 0 0 16px 4px #ffcc33, 0 0 32px 8px #ffb347,
+              0 0 0 0 #fff0;
             border-color: #ffcc33;
           }
           60% {
-            box-shadow: 0 0 24px 8px #ffb347, 0 0 48px 12px #ffcc33, 0 0 0 0 #fff0;
+            box-shadow: 0 0 24px 8px #ffb347, 0 0 48px 12px #ffcc33,
+              0 0 0 0 #fff0;
             border-color: #ffb347;
           }
           100% {

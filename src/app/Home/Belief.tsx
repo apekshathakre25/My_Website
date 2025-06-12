@@ -203,21 +203,18 @@ const CoreBeliefs = () => {
             {beliefs.concat(beliefs).map((belief, idx) => (
               <SwiperSlide key={idx}>
                 <div className="grid lg:grid-cols-2 gap-12 items-center p-8 shadow-2xl">
-                  {/* Left Side - Belief Image Card */}
                   <div className="relative group">
                     <div className="relative rounded-3xl p-8 border border-white/20 overflow-hidden flex flex-col items-center justify-center">
-                      <div className="relative  rounded-2xl overflow-hidden flex items-center justify-center">
+                      <div className="relative w-[500px] rounded-2xl overflow-hidden flex items-center justify-center">
                         <Image
                           src={belief.image}
                           alt={belief.title}
-                          
                           className="w-full h-auto object-cover"
                         />
                       </div>
                     </div>
                   </div>
 
-                  {/* Right Side - Statistics */}
                   <div className="space-y-6">
                     {belief.stats.map((stat, i) => (
                       <div
@@ -254,7 +251,7 @@ const CoreBeliefs = () => {
             ))}
           </Swiper>
         </div>
-        {/* Pagination Dots */}
+
         <div className="flex justify-center mt-12 space-x-3">
           <div className="group cursor-pointer">
             <div className="w-4 h-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-lg group-hover:scale-110 transition-transform"></div>

@@ -1,8 +1,10 @@
 "use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import type { StaticImageData } from "next/image";
 import value1 from "../../assets/value1.png";
 import value2 from "../../assets/value2.png";
 import value3 from "../../assets/value3.png";
@@ -11,12 +13,11 @@ import value5 from "../../assets/value5.png";
 import hexagon from "../../assets/hexgon.png";
 import Image from "next/image";
 
-const cards = [value1, value2, value3, value4, value5];
+const cards: StaticImageData[] = [value1, value2, value3, value4, value5];
 
 export default function Value() {
   return (
     <div className="relative py-16 overflow-hidden">
-      {/* Hexagon background */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
         <Image
           src={hexagon}
@@ -24,7 +25,7 @@ export default function Value() {
           className="w-auto h-full opacity-100"
         />
       </div>
-      {/* Title */}
+
       <div className="relative z-10 flex flex-col items-center">
         <h2 className="text-5xl font-extrabold text-purple-700 mb-6 text-center">
           Where We Create Value
@@ -34,7 +35,7 @@ export default function Value() {
           solutions.
         </p>
       </div>
-      {/* Marquee Slider */}
+
       <div className="relative z-10 max-w-7xl mx-auto">
         <Swiper
           modules={[Autoplay, FreeMode]}
@@ -58,13 +59,16 @@ export default function Value() {
         >
           {cards.concat(cards).map((img, idx) => (
             <SwiperSlide key={idx}>
-              <div className="rounded-xl shadow-xl overflow-hidden h-[320px] flex items-center justify-center">
-                <Image
-                  src={img}
-                  alt={`Value card ${idx + 1}`}
-                  className="object-contain w-full h-full"
-                  draggable={false}
-                />
+              <div className="relative rounded-xl shadow-xl overflow-hidden h-[320px] flex items-center justify-center">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={img}
+                    alt={`Value card ${idx + 1}`}
+                    fill
+                    className="object-contain"
+                    draggable={false}
+                  />
+                </div>
               </div>
             </SwiperSlide>
           ))}
